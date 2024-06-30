@@ -117,11 +117,123 @@
 
 // console.log(words.sort());
 
-document.write("Hello iCET..");
+// document.write("Hello iCET..");
+
+// let name = "nimal";
+
+// function btnClick(){
+//     document.getElementById("h1").innerText="Saman";
+//     document.getElementById("sampleDiv").innerHTML=`<h1>${name}<h1>`
+// }
+
+
+let customers = [
+    {
+        name:"saman",
+        age:"12",
+        address:"kurunegala"
+    },
+    {
+        name:"kamal",
+        age:"20",
+        address:"panadura"
+    },
+    {
+        name:"vimal",
+        age:"32",
+        address:"kurunegala"
+    },
+    {
+        name:"nimal",
+        age:"15",
+        address:"nuwara"
+    },
+    {
+        name:"sunil",
+        age:"50",
+        address:"gampaha"
+    },
+    {
+        name:"ranil",
+        age:"30",
+        address:"mathara"
+    }
+]
+
+
+
 
 function btnClick(){
-    document.getElementById("h1").innerHTML="Saman";
+    addCustomer();
+    loadTable();
 }
+
+function addCustomer(){
+   let name =  document.getElementById("txtName").value;
+   let age =  document.getElementById("txtAge").value;
+   let address =  document.getElementById("txtAddress").value;
+
+   console.log(name+"|"+age+"|"+address);
+
+   customers.push({
+    name,
+    age,
+    address
+   })
+}
+
+
+function loadTable(){
+    let tblCustomers = document.getElementById("tblCustomers");
+
+
+    let tabelBody =`
+           <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>Address</th>
+        </tr>
+                    `;
+    
+    
+    customers.forEach(data =>{
+        tabelBody += `<tr> 
+                        <td>${data.name}</td>
+                        <td>${data.age}</td>
+                        <td>${data.address}</td>
+                    </tr>`
+    });
+
+    console.log(tabelBody);
+    tblCustomers.innerHTML=tabelBody;
+}
+
+
+
+
+// function run(){
+//     console.log("run");
+// }
+
+// let run = function(){
+//     console.log("run");
+// }
+
+// let run = () => {
+//     console.log("run");
+// }
+
+// let run = () => console.log("run");
+
+
+// (data) => console.log("run");
+
+
+
+
+
+
+
 
 
 
