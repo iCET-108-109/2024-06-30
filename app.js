@@ -182,7 +182,6 @@ function addCustomer(){
    })
 }
 
-
 function loadTable(){
     let tblCustomers = document.getElementById("tblCustomers");
 
